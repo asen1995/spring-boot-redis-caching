@@ -1,35 +1,22 @@
 package com.caching.springbootrediscaching.model;
 
-import java.io.Serializable;
+import lombok.Data;
 
+import java.io.Serializable;
+import java.math.BigDecimal;
+
+@Data
 public class Client implements Serializable {
 
     private String name;
     private String email;
     private String phone;
 
+    private String address;
+    private String city;
+    private String state;
+    private String zipCode;
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
+    private String country;
+    private BigDecimal salary;
 }
