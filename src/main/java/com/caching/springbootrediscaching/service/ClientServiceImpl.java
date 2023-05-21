@@ -18,17 +18,17 @@ public class ClientServiceImpl implements ClientService {
     @Cacheable("email")
     public Client getClient(String email) {
 
-        Client client = new Client();
-        client.setName("John Doe");
-        client.setEmail(email);
-        client.setPhone("1234567890");
 
-        client.setCountry("USA");
-        client.setState("NY");
-        client.setZipCode("12345");
-        client.setAddress("123 Main St");
-        client.setCity("New York");
-        client.setSalary(new BigDecimal(100000));
+        Client client = Client.builder()
+                .name("John Doe")
+                .email(email)
+                .phone("1234567890")
+                .country("USA")
+                .state("NY")
+                .zipCode("12345")
+                .address("123 Main St")
+                .city("New York")
+                .salary(new BigDecimal(100000)).build();
 
         logger.info("Client with email: {} not found in cache. Returning from method.", email);
 
